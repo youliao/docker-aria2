@@ -25,6 +25,7 @@ auto-file-renaming=false
 disable-ipv6=true
 quiet=${QUIET:-false}
 on-download-complete=/on-download-complete.sh
+on-download-error=/on-download-error.sh
 EOF
 echo "Created aria2.conf"
 fi
