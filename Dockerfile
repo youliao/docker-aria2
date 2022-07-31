@@ -6,8 +6,7 @@ RUN apk add --update --no-cache aria2 && rm -rf /var/cache/apk/*
 RUN apk add --update --no-cache rclone && rm -rf /var/cache/apk/*
 RUN apk add --update --no-cache curl && rm -rf /var/cache/apk/*
 
-ADD entrypoint.sh start.sh upload.sh /
-RUN chmod +x /entrypoint.sh
+COPY ["entrypoint.sh","start.sh","notifications","/"]
 
 ENTRYPOINT [ "sh","/entrypoint.sh" ]
 CMD [ "/start.sh" ]

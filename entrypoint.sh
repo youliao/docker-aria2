@@ -24,7 +24,7 @@ max-file-not-found=1
 auto-file-renaming=false
 disable-ipv6=true
 quiet=${QUIET:-false}
-on-download-complete=/upload.sh
+on-download-complete=/on-download-complete.sh
 EOF
 echo "Created aria2.conf"
 fi
