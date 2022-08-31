@@ -1,12 +1,13 @@
 #!/bin/sh
 file_path=$3
 file_name=${file_path##*/}
+bucket="0x"{file_name:0:2}
 gid=$1
 uuid=$(cat /proc/sys/kernel/random/uuid)
 now=$(date -Iseconds)
 
 if [ "$AUTO_UPLOAD" = true ];then
-    rclone move -v $file_path minio:$RCLONE_S3_BUCKET
+    rclone moveto -v $file_path minio:$bucket
 fi
 
 if [ "$PUBLISH_EVENTS" = true ];then

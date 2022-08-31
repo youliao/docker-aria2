@@ -47,7 +47,6 @@ echo "Created rclone.conf"
 fi
 
 echo "Checking RCLONE connection ..."
-rclone mkdir minio:$RCLONE_S3_BUCKET
 
 exec "$@"
 
